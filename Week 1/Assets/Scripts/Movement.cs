@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,11 @@ public class Movement : MonoBehaviour
     {
         transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 }
