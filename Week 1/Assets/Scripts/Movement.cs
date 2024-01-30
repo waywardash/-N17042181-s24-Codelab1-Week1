@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // move the player horizontally
         transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         
 
@@ -22,6 +23,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //destroy player when in contact with object
         Destroy(gameObject);
     }
 }
